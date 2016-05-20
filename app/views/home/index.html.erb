@@ -1,0 +1,39 @@
+
+
+
+
+
+
+
+<div class="container">
+    <form style="margin-top : 40px" action="/home/write" method="POST">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="text" name="title" class="form-control" id="exampleInputEmail1" placeholder="제목임녁하시오">
+  </div>
+ 
+   <textarea class="form-control" rows="5" id="content" name="content"  placeholder="내용을 임녁ㅎㅏ시오"></textarea>
+  
+  <button type="submit" class="btn btn-default">제출</button>
+</form>
+    
+    <% @posts.each do |p| %>
+    <div class="well">    
+        <span style="font-weight:bold;"><%= p.title    %></span><br>
+        <%= p.content   %>
+        
+        
+        
+                <form style="margin-top : 40px" action="/home/datgul_write" method="POST">
+                <input type="hidden" value="<%=  p.id  %>" name="pid">
+                <textarea class="form-control" rows="5" id="content" name="content"  placeholder="내용을 임녁ㅎㅏ시오"></textarea>
+                <button type="submit" class="btn btn-default">제출</button>
+                </form>
+            <% p.datguls.each do |k| %>
+            <p><%= k.content %> </p>
+            <%end%>
+    </div>
+    <%end%>
+
+
+
