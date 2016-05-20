@@ -7,3 +7,4 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Post.create(title: "하이", content: "내용입니다")
 Datgul.create(content: "고정리플", post_id: 1)
+
